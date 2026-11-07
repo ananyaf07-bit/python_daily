@@ -1,7 +1,8 @@
 import requests
 user_id=int(input("Enter user ID (1-10):"))
+url=f"https://jsonplaceholder.typicode.com/users/{user_id}"
+
 try:
-    url=f"https://jsonplaceholder.typicode.com/users/{user_id}"
     response=requests.get(url)
     if(response.status_code==200):
         info=response.json()
@@ -14,6 +15,7 @@ try:
         print("Website:",info["website"],"\n")
     else:
         print("User not found")
+        
 except requests.exceptions.RequestException:
     print("Request can't be fulfilled")
 
