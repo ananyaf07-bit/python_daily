@@ -30,6 +30,17 @@ print("\nCube Numbers:\n")
 for x in cube_numbers(10):
     print(x)
 
+def fibonacci(n):
+    a=0
+    b=1
+    for i in range(n):
+        yield a
+        a,b=b,a+b
+
+print("\nFibonacci Numbers:\n")
+for x in fibonacci(8):
+        print(x)
+
 
 
 
